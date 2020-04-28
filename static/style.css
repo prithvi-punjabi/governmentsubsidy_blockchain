@@ -1,0 +1,8 @@
+form{
+	background: linear-gradient(to right, #654ea3, #eaafc8);
+	padding: 20px;
+	text-align: center;
+	width: 50%;
+	display: inline-block;
+	margin: auto;
+}

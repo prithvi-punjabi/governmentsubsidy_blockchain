@@ -1,0 +1,52 @@
+<!--<!doctype html>
+<html>
+<head>
+    Hash Table <br>
+    <style>
+        table:{
+            text-align: center:
+        }
+    </style>
+</head>
+<body>
+</body>
+<table border = 1px>
+    <tr>
+        <th>Hash value</th>
+        <th>Block Number</th>
+        <th>Data</th>
+        <th>Number of Hashes</th>
+        <th>Previous Hash Value</th>
+    </tr>
+    <tr>
+        <td>{{ v }}</td>
+        <td>{{ v2 }}</td>
+        <td>{{ v3 }}</td>
+        <td>{{ v4 }}</td>
+        <td>{{ v5 }}</td>
+    </tr>
+</table>
+</body>
+</html>-->
+<!doctype html>
+<html>
+<body>
+{% for i in range(l6) %}
+<table border = 1px>
+    <tr>
+        <th>Hash value</th>
+        <th>Block Number</th>
+        <th>Number of Hashes</th>
+        <th>Previous Hash Value</th>
+    </tr>
+
+    <tr>
+        <td>{{ l1[i] }}</td>
+        <td>{{ l2[i] }}</td>
+        <td>{{ l4[i] }}</td>
+        <td>{{ l5[i] }}</td>
+    </tr>
+</table>
+<br>
+{% endfor %}
+</body>

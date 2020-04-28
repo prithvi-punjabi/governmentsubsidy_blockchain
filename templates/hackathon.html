@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+li.nav a {
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.mySlides{
+    display:none;
+}
+p{
+    text-align: center;
+}
+h1{
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+}
+img{
+    height: 250px;
+    width: 250px;
+}
+form{
+	border: solid 1px;
+	padding: 20px 0 20px 0;
+	text-align: center;
+	width: 300px;
+	display: block;
+	border-radius: 10px;
+	position: relative;
+	float: none;
+	margin: auto;
+	padding-bottom: 20px;
+}
+#products .footer {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #e7e7e7;
+  width: 90%;
+  padding: 17px 0 17px;
+  font-size: 13px;
+  color: #555;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer .top {
+  background: #37475a;
+}
+
+footer .top a {
+  padding: 17px;
+  width: 100%;
+  display: inline-block;
+}
+
+footer .top a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .top:hover {
+  background: #485769;
+}
+
+footer .center {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+footer ul {
+  margin: 30px 40px 30px 0;
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+}
+
+footer .middle {
+  background: #232f3e;
+}
+
+footer .middle h3 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom 10px;
+  padding: 0;
+  font-size: 16px;
+}
+
+footer .middle li {
+  position: relative;
+}
+
+footer .middle .logo {
+  background: transparent url('../img/logo.png') no-repeat 0 0;
+  background-size: 76px;
+  width: 76px;
+  height: 23px;
+  display: block;
+  border: none !important;
+  margin-right: 60px;
+  position: absolute;
+  top: -14px;
+  left: -120px;
+}
+
+footer .middle a {
+  color: #ddd;
+  font-size: 13px;
+  display: block;
+  padding: 5px 0;
+}
+
+footer ul.copy {
+  display: inline-block;
+  width: 100%;
+}
+
+footer ul.copy li {
+  display: inline-block;
+  margin-right: 20px;
+  color: #999;
+  font-size: 11px;
+}
+
+footer .middle .copy {
+  border-top: 1px solid #3a4553;
+  padding: 30px 20px 20px 20px;
+}
+
+footer .middle .copy a {
+  padding: 10px 30px 10px 10px;
+  color: #ccc;
+  border: 1px solid #848688;
+  border-radius: 3px;
+}
+
+footer .middle .copy a:hover {
+  text-decoration: none;
+  border-color: #8D9096;
+}
+
+footer .middle .fa-globe {
+  margin-right: 5px;
+}
+
+footer .middle .flag-icon-india {
+  background-image: url("{{ url_for('static', filename='download.jpg') }}");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1em;
+  width: 1.33333333em;
+  margin-right: 7px;
+  background-position: 0 2px;
+}
+
+footer .bottom {
+  background: #131a22;
+}
+
+footer .bottom ul {
+  margin-right: 0;
+}
+
+footer .bottom li {
+  margin-bottom: 15px;
+}
+
+footer .bottom a {
+  color: #ddd;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+footer .bottom a span {
+  color: #999;
+  font-size: 10px;
+}
+h1{
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+}
+</style>
+</head>
+<header>
+<ul style="font-size:20px;font-weight:bold;position:absolute;list-style-type: none;margin: 0 auto;padding: 0;overflow: hidden;background-color:transparent;">
+  <li class="nav" style="color: #000000;float:left;"><a class="active" href="#home">Home</a></li>
+  <li class="nav" style="color: black;float:left;"><a href="#news">News</a></li>
+  <li class="nav" style="color: black;float:left;"><a href="#contact">Contact</a></li>
+  <li class="nav" style="color: black;float:left;"><a href="#about">About</a></li>
+</ul>
+</header>
+<body>
+
+<div class="w3-content w3-section">
+  <img class="mySlides" src="{{ url_for('static', filename='hey.jpg') }}" style="width:100%">
+  <img class="mySlides" src="{{ url_for('static', filename='del.jpg') }}" style="width:100%">
+  <img class="mySlides" src="{{ url_for('static', filename='say.jpg') }}" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+<p><img src="{{ url_for('static', filename='government-of-india.jpg') }}"></p>
+<h1 style="text-align: center">Government Subsidies</h1>
+<form id="block" method='POST' action="/hackathon">
+  <label>Name of Supplier:</label><br>
+  <input type="text" style="border-radius:6px" name="sname" placeholder="Enter text here"> <br><br>
+<label>Name of Product:</label><br>
+  <input type="text" style="border-radius:6px" name="name" placeholder="Enter text here"> <br><br>
+<label>Batch ID:</label><br>
+  <input type="text" style="border-radius:6px" name="batch" placeholder="eg. AbC123" pattern="[A-Za-z]{3}[0-9]{3}"> <br><br>
+<label>Quantity:</label><br>
+  <input type="number" style="border-radius:6px" name="qn" placeholder="Enter no. of products"> <br><br>
+<label>Price:</label><br>
+  <input type="number" style="border-radius:6px" name="rs" placeholder="Enter price of products"> <br><br>
+<label>GST Invoice Number: </label><br>
+  <input type="text" style="border-radius:6px" name="gst" pattern="[0-9]+[a-z0-9]{10}+[a-z]{5}" placeholder="ex:22A00077007A12345"> <br><br>
+    <input type="submit" style="border-radius:6px" value="Upload">
+</form>
+</body>
+   <footer style="padding:0 5 0 5">
+       <div class="middle">
+      <div class="center" style="padding: 2 0 0 5">
+        <ul>
+          <li><h3>Disclaimer</h3></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Incorporated Devices</a></li>
+        </ul>
+        <ul>
+          <li><h3>Mission</h3></li>
+          <li><a href="#">Long term goals</a></li>
+          <li><a href="#">Short term goals</a></li>
+          <li><a href="#">Methods</a></li>
+          <li><a href="#">Reach</a></li>
+          <li><a href="#">Affiliations</a></li>
+          <li><a href="#">Become a member</a></li>
+          <li><a href="#">Help our mission</a></li>
+        </ul>
+        <ul>
+          <li><h3>SiteMap</h3></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work in Progress</a></li>
+        </ul>
+        <ul>
+          <li><h3>Let Us Help You</h3></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">What is blockchain?</a></li>
+          <li><a href="#">What are Subsidies?</a></li>
+          <li><a href="#">Are you eligible?</a></li>
+          <li><a href="#">Is Blockchain safe?</a></li>
+          <li><a href="#">Transparency</a></li>
+          <li><a href="#">Government Assistance</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+          <ul>
+          <li><h3>Vision</h3></li>
+          <li><a href="#">Technlogical India</a></li>
+          <li><a href="#">Innovation</a></li>
+          <li><a href="#">Bitcoin Legalisation</a></li>
+          <li><a href="#">Feasibility</a></li>
+          <li><a href="#">Scalability</a></li>
+        </ul>
+      </div>
+
+      <br><br><ul class="copy text-center">
+        <li><a href="#" class="logo"></a></li>
+        <li><a href="#" class="select"><i class="fa fa-globe" aria-hidden="true"></i> English</a></li>
+        <li><a href="#" class="select"><i class="flag-icon-india"></i>India</a></li>
+      </ul>
+    </div>
+    </div>
+
+    <div class="bottom">
+      <div class="center">
+        <ul>
+          <li><a href="#">Usability<br/><span>Stream millions<br> of blockchains</span></a></li>
+          <li><a href="#">Usability<br/><span>Safe, secure<br>Easy to use</span></a></li>
+          <li><a href="#">Services<br/><span>Scalable Cloud<br> Computing Services</span></a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Membership Drive<br/><span>Cloud storage<br> from Union</span></a></li>
+          <li><a href="#">Services<br/><span>Government related<br>Blockchain Technology</span></a></li>
+          <li><a href="#">Technology<br/><span>Download Manual<br>Reference Books</span></a></li>
+          <li><a href="#">Marketing<br/><span>Cross Platform<br>Compatibility markets</span></a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">6pm<br/><span>Score deals<br> on fashion brands</span></a></li>
+          <li><a href="#">Home Services<br/><span>Handpicked Pros<br> Happiness Guarantee</span></a></li>
+          <li><a href="#">Book Depository<br/><span>Books With Free<br> Delivery Worldwide</span></a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">AbeBooks<br/><span>Books, art<br> &amp; collectibles</span></a></li>
+          <li><a href="#">Amazon Inspire<br/><span>Free Digital Educational<br>  Resources</span></a></li>
+          <li><a href="#">Box Office Mojo<br/><span>Find Movie<br> Box Office Data</span></a></li>
+          <li><a href="#">IMDb<br/><span>Movies, TV<br> &amp; Celebrities</span></a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">ACX <br/><span>Audiobook Publishing<br> Made Easy</span></a></li>
+          <li><a href="#">Amazon Rapids<br/><span>Fun stories for<br>  kids on the go</span></a></li>
+          <li><a href="#">ComiXology<br/><span>Thousands of<br> Digital Comics</span></a></li>
+          <li><a href="#">IMDbPro<br/><span>Get Info Entertainment<br> Professionals Need</span></a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Alexa<br/><span>Actionable Analytics<br> for the Web</span></a></li>
+          <li><a href="#">Amazon Restaurants<br/><span>Food delivery from<br> local restaurants</span></a></li>
+          <li><a href="#">CreateSpace<br/><span>Indie Print Publishing<br> Made Easy</span></a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Amazon Business<br/><span>Everything For<br> Your Business</span></a></li>
+          <li><a href="#">Amazon Video Direct<br/><span>Video Distribution<br> Made Easy</span></a></li>
+          <li><a href="#">DPReview<br/><span>Digital<br> Photography</span></a></li>
+        </ul>
+
+        <ul class="copy text-center">
+          <li><a href="#">Conditions of Use</a></li>
+          <li><a href="#">Privacy Notice</a></li>
+          <li>&copy; 1996-2017, gov.in, Inc. or its affiliates</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</html>
