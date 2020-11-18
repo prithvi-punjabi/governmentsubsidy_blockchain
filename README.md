@@ -5,6 +5,6 @@ At every stage of the government subsidy chain, starting from a farmer or manufa
 
 Hence, if there is any tampering of prices/quantities at any level, the hash value changes and it is easy to tell where corruption/malfeasance has found it's way into the subsidy chain.
 
-The main Python program is blockchain.py, and it also interacts a localhost web server using Flask in finalbc.py. 
+The main Python program is blockchain.py, and it also interacts a localhost web server using Flask in bc.py. 
 
 Thank you, and enjoy!
